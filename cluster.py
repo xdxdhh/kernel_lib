@@ -99,14 +99,12 @@ class Heuristics(): #mozna to pojmenovat random descent?
         Perform Random Descent with mutation on the given function f, starting from the initial solution x_init,
         for at most max_iter iterations.
         """
-        all_fs = []
         if self.verbose == 1:
             print(f"starting random descent with {mutation} mutation.")
         self.partition_vector = np.random.randint(0, self.n_clusters, K.n)
 
         x_best = self.partition_vector
         f_best = self.objective_function(K, x_best)
-        all_fs.append(f_best)
         if self.verbose == 1:
             print(f"f starting: {f_best}")
 
@@ -125,11 +123,8 @@ class Heuristics(): #mozna to pojmenovat random descent?
                 x_best = x_new
                 self.partition_vector = x_best
                 f_best = f_new
-                all_fs.append(f_best)
-            else:
-                all_fs.append(f_best)
         #print(f"x final: {x_best}")
-        return self.partition_vector, f_best, all_fs
+        return self.partition_vector, f_best
     
      
     
