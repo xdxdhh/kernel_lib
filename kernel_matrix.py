@@ -29,7 +29,7 @@ class Kernel_matrix(object):
                 self.params = params
                 kern = kernel.Polynom_kernel(self.params)
 
-        elif kernel_type=="identity": #pak pokryt nectverce
+        elif kernel_type=="identity": 
             if np.shape(X)[0] != np.shape(X)[1]:
                 raise TypeError(f"Kernel matrix must be square matrix, but X has shape {np.shape(X)}")
             else:
