@@ -2,14 +2,12 @@ import numpy as np
 import kernel
 
 
-
 class Kernel_matrix(object):
     def __init__(self, X, kernel_type, params="auto") -> None: #X is input data, kernel  is string, params is a list of params or "auto"
         """ initialization of kernel matrix and size parameter n and params"""
         self.n = np.shape(X)[0]
         self.shape = [self.n, self.n]
         self.K = np.zeros((self.n, self.n)) #allocate matrix
-        #switch podle kernel functions: "gauss", "polynomial" etc
         
         if kernel_type == "gauss":
             print("gaussian kernel detected")
@@ -69,7 +67,5 @@ class Kernel_matrix(object):
 
         
 
-    
-#zamysleni: custom kernel od uzivatele
                 
     

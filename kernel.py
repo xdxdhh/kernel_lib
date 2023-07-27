@@ -13,7 +13,7 @@ class Gauss_kernel(Kernel_base):
         if len(params) == 0 | len(params) > 1:
             raise TypeError(f"Gaussian kernel takes 1 parameter, but {len(params)} were given.") 
         else:
-            print("Gaussian kernel initialized") #should be only in verbose mode again?
+            print("Gaussian kernel initialized") 
             self.sigma = params[0]
 
     def eval(self, x, y):
